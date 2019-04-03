@@ -1,3 +1,3 @@
 */2 * * * * $HOME/projects/movie_sorted/scripts/run_movie_opening_alerter.sh avengers-endgame bengaluru movie-bang-ET00090482-MT iit2014129@gmail.com,iit2015105@iiita.ac.in 20190426,20190427
 
-*/5 * * * * . $HOME/projects/movie_sorted/scripts/run_movie_opening_alerter.sh avengers-endgame hyderabad movie-hyd-ET00090482-MT iit2014129@gmail.com,ayan.shekh785@gmail.com 20190426,20190427
+*/5 * * * * $HOME/projects/movie_sorted/scripts/run_movie_opening_alerter.sh avengers-endgame hyderabad movie-hyd-ET00090482-MT iit2014129@gmail.com,ayan.shekh785@gmail.com 20190426,20190427
