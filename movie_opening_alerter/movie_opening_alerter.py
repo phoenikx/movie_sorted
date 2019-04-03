@@ -39,14 +39,16 @@ class CinemaHallOpeningAlerter:
         return mail.get()
 
     def has_booking_started(self):
-        base_url = self.base_url + "/" + self.movie_name_with_location + "/" + self.movie_id
+        movie_url = self.base_url + "/" + self.movie_name_with_location + "/" + self.movie_id
         for date in self.date_list:
-            url = base_url + "/" + str(date)
+            url = movie_url + "/" + str(date)
             print("Checking url: ", url)
             try:
                 r = requests.get(url)
+                print("Status code: %s " % r.status_code)
                 soup = BeautifulSoup(r.content, 'html.parser', from_encoding='utf-8')
                 theatre_list = soup.findAll("a", {"class": "__venue-name"})
+                print("Number of theatres returned from url: %s" % len(theatre_list))
                 if theatre_list:
                     return True
             except Exception as e:
@@ -80,7 +82,7 @@ if __name__ == '__main__':
     movie_id_to_query = args.movie_id
     emails_to_alert = args.emails.split(",")
     date_list_to_search = [] if not args.date_list else args.date_list.split(',')
-    print('Running hall opening alerter script at %s' % datetime.datetime.now())
+    print('Running movie opening alerter script at %s' % datetime.datetime.now())
     hall_opening_alerter = CinemaHallOpeningAlerter(movie_name_to_query, location_to_query, movie_id_to_query,
                                                     emails_to_alert, date_list_to_search)
     hall_opening_alerter.run()
