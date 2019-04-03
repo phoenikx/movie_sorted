@@ -1,5 +1,5 @@
 pyyaml
-sendgrid
+sendgrid==5.6.0
 requests
 html5lib
 bs4
