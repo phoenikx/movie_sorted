@@ -1,4 +1,4 @@
-run.sh
+export_envs.sh
 nohup.out
 .idea
 .DS_Store

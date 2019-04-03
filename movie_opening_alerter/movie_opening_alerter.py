@@ -28,7 +28,6 @@ class CinemaHallOpeningAlerter:
                                      .replace('{movie_name}', self.movie_name)
                                      .replace('{location}', str(self.location))
                                      .replace('{status}', 'Booking started'))
-        print(self.email_content.get())
 
     def build_email(self):
         mail = Mail(from_email=self.from_email, subject=self.subject, to_email=self.from_email,
@@ -44,18 +43,21 @@ class CinemaHallOpeningAlerter:
         for date in self.date_list:
             url = base_url + "/" + str(date)
             print("Checking url: ", url)
-            r = requests.get(url)
-            soup = BeautifulSoup(r.content, 'html.parser', from_encoding='utf-8')
-            theatre_list = soup.findAll("a", {"class": "__venue-name"})
-            if theatre_list:
-                return True
+            try:
+                r = requests.get(url)
+                soup = BeautifulSoup(r.content, 'html.parser', from_encoding='utf-8')
+                theatre_list = soup.findAll("a", {"class": "__venue-name"})
+                if theatre_list:
+                    return True
+            except Exception as e:
+                print("Exception while hitting url: %s" % e)
         return False
 
     def send_email(self):
+        print("Sending emails to: %s" % str(self.emails))
         response = self.email_sender.client.mail.send.post(request_body=self.build_email())
         print(response.status_code)
         print(response.body)
-        print(response.headers)
 
     def run(self):
         has_booking_started = self.has_booking_started()

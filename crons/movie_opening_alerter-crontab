@@ -1,0 +1,8 @@
+*/5 * * * * . export_envs.sh; DATE=`date +%Y_%m_%d`; source /Users/nikhilranjan/.virtualenvs/projects/movie_sorted/bin/activate; python3 /Users/nikhilranjan/projects/movie_sorted/movie_opening_alerter/movie_opening_alerter.py avengers-endgame bengaluru movie-bang-ET00090482-MT iit2014129@gmail.com 20190426,20190427 >> /Users/nikhilranjan/projects/logs/movie_opening_alerter/$DATE-bangalore.log
+
+*/5 * * * * . export_envs.sh; DATE=`date +%Y_%m_%d`; source /Users/nikhilranjan/.virtualenvs/projects/movie_sorted/bin/activate; python3 /Users/nikhilranjan/projects/movie_sorted/movie_opening_alerter/movie_opening_alerter.py avengers-endgame hyderabad movie-hyd-ET00090482-MT iit2014129@gmail.com 20190426,20190427 >> /Users/nikhilranjan/projects/logs/movie_opening_alerter/$DATE-hyderabad.log
+
+
+# */5 * * * * . export_envs.sh; DATE=`date +%Y_%m_%d`; source /home/nikhilranjan/.venvs/bookmyshow/bin/activate; python3 /home/nikhilranjan/projects/movie_sorted/movie_opening_alerter/movie_opening_alerter.py avengers-endgame bengaluru movie-bang-ET00090482-MT iit2014129@gmail.com 20190426,20190427 >> /home/nikhilranjan/projects/logs/movie_opening_alerter/$DATE-bangalore.log
+
+# */5 * * * * . export_envs.sh; DATE=`date +%Y_%m_%d`; source /home/nikhilranjan/.venvs/bookmyshow/bin/activate; python3 /home/nikhilranjan/projects/movie_sorted/movie_opening_alerter/movie_opening_alerter.py avengers-endgame hyderabad movie-hyd-ET00090482-MT iit2014129@gmail.com 20190426,20190427 >> /home/nikhilranjan/projects/logs/movie_opening_alerter/$DATE-hyderabad.log
