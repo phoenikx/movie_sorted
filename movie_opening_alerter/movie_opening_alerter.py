@@ -12,7 +12,7 @@ from sendgrid.helpers.mail import Content, Mail, Personalization
 
 class CinemaHallOpeningAlerter:
     def __init__(self, movie_name, location, movie_id, emails, date_list):
-        self.email_sender = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
+        self.email_sender = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
         self.from_email = Email(os.environ.get('FROM_EMAIL'))
         self.base_url = "https://in.bookmyshow.com/buytickets"
         self.location = location
