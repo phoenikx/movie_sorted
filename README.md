@@ -1,6 +1,6 @@
 # Movie Sorted
 
-> Movie bookings made easy
+**Movie bookings made easy**
 
 Steps to run any script, say hall_opening_alerter.py:
 
@@ -12,7 +12,7 @@ Steps to run any script, say hall_opening_alerter.py:
 
 > For running hall_opening_alerter.py
 
-1. ```python3 hall_opening_alerter/hall_opening_alerter.py movie_name location movie_id emails dates_in_yyyymmdd_format(optional)```
+```python3 hall_opening_alerter/hall_opening_alerter.py movie_name location movie_id emails dates_in_yyyymmdd_format(optional)```
 
 For example:- 
 
@@ -20,8 +20,6 @@ For example:-
 
 
 > For running movie_opening_alerter.py
-
-1. 
 
 ```python3 movie_opening_alerter/movie_opening_alerter.py movie_name location movie_id emails dates_in_yyyymmdd_format```
 
